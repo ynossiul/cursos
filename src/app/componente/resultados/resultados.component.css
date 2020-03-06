@@ -1,0 +1,43 @@
+.img{
+  position: relative;
+  max-width: 30%;
+  width: 50rem;
+  bottom: -1rem;
+}
+
+.card{
+  width: 35rem;
+  height: 10rem;
+  border-radius: 4rem;
+  right: -1rem;
+}
+
+.card-body p{
+  text-align: center;
+  font-size: 50% medium;
+  position: relative;
+  right: -10rem;
+  top:-3rem;
+
+}
+.card h5{
+  width: 20%;
+  height: 10%;
+  position: relative;
+  right: -13rem;
+  top: -3rem;
+  border: black ;
+  border-color: black;
+  top: -5rem;
+
+}
+
+.divisor{
+  -webkit-column-rule:3px outset rgb(15, 189, 53);
+  column-rule:3px outset #14c51d;
+
+}
+
+
+
+

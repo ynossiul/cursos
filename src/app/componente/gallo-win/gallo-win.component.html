@@ -1,0 +1,60 @@
+
+<head>
+	<title>Generar loteria , profesota barbara sporman</title>
+	<style type="text/css">
+		table{
+			border-collapse:collapse;
+			display: inline-block;
+			margin: 5px 5px;
+		}
+		span{
+			font-size: 15px;
+			padding: 2px 4px;
+			color: white;
+			background: rgba(206,191,191,0.3);
+			border-radius: 10px 10px 10px 10px;
+		}
+		table tr {
+			background-color: #0E6D9C;
+		}
+		td{
+			padding: 3px;
+			margin: 0px 0px;
+		}
+		tr:first-child {
+			background-color: #0E6D9C;
+		}
+		tr:last-child {
+			background-color: #0E6D9C;
+		}
+		tr:first-child td:first-child{
+			border-radius: 10px 0px 0px 0px;
+		}
+		tr:first-child td:last-child{
+			border-radius: 0px 10px 0px 0px;
+		}
+		tr:last-child td:first-child{
+			border-radius: 0px 0px 0px 10px;
+		}
+		tr:last-child td:last-child{
+			border-radius: 0px 0px 10px 0px;
+		}
+  </style>
+  </head>
+
+<body>
+	<header>
+		<form>
+			<b>Numero de Targetas<input type="number" id="ntar" min="1" max="50" step="1" value="40"></b>
+			<b>Maxmimo<input type="number" id="max" min="1" max="100" step="1" value="100"></b>
+			<b>Filas<input type="number" id="fila" min="1" max="10" step="1" value="5"></b>
+			<b>Columnas<input type="number" id="columna" min="1" max="10" step="1" value="6"></b>
+			<input type="button" value="Generar"/>
+		</form>
+		<br>
+		<b>Tamaño de texto <input type="range" id="fontsize" min="5" max="50" step="1" value="15" /></b>
+	</header>
+<section>
+	<article id="articulo"></article>
+</section>
+</body>
