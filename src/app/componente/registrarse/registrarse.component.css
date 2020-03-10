@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+span{
+font-size: 18px;
+font-family: 'Quicksand', sans-serif;
+}
+
+body{
+margin-top:5rem;
+
+}
+
+.wrap{
+width: 350px;
+margin: auto;
+background:#e1211e;
+margin-top: 50px;
+padding: 5px;
+}
+
+form{
+padding: 10px;
+border: 1px dotted white;
+}
+
+h2{
+text-align: center;
+background: #78140a;
+color: white;
+padding: 10px;
+border-radius: 10px;
+}
+
+input{
+padding: 10px;
+margin: 5px;
+border-radius: 5px;
+border: none;
+}
+
+input[type=text], input[type=email], input[type=password], input[type=number]{
+width: 90%;
+}
+
+input[type=checkbox]{
+font-family: 'Quicksand', sans-serif;
+}
