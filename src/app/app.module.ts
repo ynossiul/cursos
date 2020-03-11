@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +22,7 @@ import { RegistrarseComponent } from './componente/registrarse/registrarse.compo
 import { AnuncioComponent } from './componente/anuncio/anuncio.component';
 import { GanagatoComponent } from './componente/ganagato/ganagato.component';
 import { ResultadosComponent } from './componente/resultados/resultados.component';
+import { Estados } from './servicios/estados-service';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,7 @@ import { ResultadosComponent } from './componente/resultados/resultados.componen
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [Estados],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

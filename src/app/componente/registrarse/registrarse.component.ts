@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+import { Estados } from 'src/app/servicios/estados-service';
+
+
+
+
 
 @Component({
   selector: 'app-registrarse',
@@ -7,9 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarseComponent implements OnInit {
 
-  constructor() { }
+  // tslint:disable-next-line: max-line-length
+
+
+
+
+
+  constructor(public estado: Estados) { }
 
   ngOnInit(): void {
   }
+
 
 }
