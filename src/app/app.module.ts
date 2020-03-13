@@ -22,7 +22,8 @@ import { RegistrarseComponent } from './componente/registrarse/registrarse.compo
 import { AnuncioComponent } from './componente/anuncio/anuncio.component';
 import { GanagatoComponent } from './componente/ganagato/ganagato.component';
 import { ResultadosComponent } from './componente/resultados/resultados.component';
-import { Estados } from './servicios/estados-service';
+import { EstadosServicio } from './servicios/estados.service';
+
 
 @NgModule({
   declarations: [
@@ -46,9 +47,10 @@ import { Estados } from './servicios/estados-service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [Estados],
+  providers: [EstadosServicio],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

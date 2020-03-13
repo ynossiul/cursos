@@ -46,4 +46,6 @@ input[type=checkbox]{
 font-family: 'Quicksand', sans-serif;
 }
 
-
+option{
+  font-family: 'Quicksand', sans-serif;
+}

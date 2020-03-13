@@ -6,49 +6,59 @@
 <input type="text" name="nombre" placeholder="Nombre">
 <input type="text" name="apellidop" placeholder="Primer Apellido">
 <input type="text" name="apellidom" placeholder="Segundo Apellido">
+<div class="form-group">
+  <label >Sexo</label>
+  <div class="form-control">
+    <label class="radio-inline">
+      <input  type="radio" value="male"  name="sexo" >
+      Hombre
+    </label>
+    <label class="radio-inline">
+      <input type="radio"  value="female" name="sexo">
+      Mujer
+    </label>
+  </div>
+</div>
+</form>
+<form #estadoform="ngForm">
 <input type="number" name="celular" placeholder="Celular">
 <input type="text" name="Pais" placeholder="Mexico" value="Mexico" disabled="true">
-<form action="#" name="formulario1" >
-<select name="estado" >
-  <option value="0"> Estado</option>
-  <option value="1">Aguas Caliente</option>
-  <option value="2">Baja California</option>
-  <option value="3">Baja California Sur</option>
-  <option value="4">Campeche</option>
-  <option value="5">Coahualia de Zaragosa</option>
-  <option value="6">Colima</option>
-  <option value="7">Chiapas</option>
-  <option value="8">Chihuahua</option>
-  <option value="9">Distrito Federal</option>
-  <option value="10">Durango</option>
-  <option value="11">Guajuato</option>
-  <option value="12">Guerrero</option>
-  <option value="13">Hidalgo</option>
-  <option value="14">Jalisco</option>
-  <option value="15">Mexico</option>
-  <option value="16">Michoacán de Ocampo</option>
-  <option value="17">Morelos</option>
-  <option value="18">Nayarit</option>
-  <option value="19">Nuevo Leon</option>
-  <option value="20">Oaxaca</option>
-  <option value="21">Puebla</option>
-  <option value="22">Querétaro</option>
-  <option value="23">Quintana Roo</option>
-  <option value="24">San Luis Potosi</option>
-  <option value="25">Sinaloa</option>
-  <option value="26">Sonora</option>
-  <option value="27">Tabasco</option>
-  <option value="28">Tamaulipas</option>
-  <option value="29">Tlaxcala</option>
-  <option value="30">Veracruz de Ignacio de la llave</option>
-  <option value="31">Yucatán</option>
-  <option value="32">Zacatecas</option>
+<div class="form-group">
+  <label style="font-family: 'Quicksand', sans-serif;" >
+    Estado
+  </label>
+  <select #estadoselect name="estados" id="estados" [(ngModel)]="estados[0]" (click)="cambio(estadoselect.value)" >
+    <option *ngFor="let estado of estados" [ngValue]="estado.id" >
+      {{estado.name}}
+    </option>
+  </select>
+</div>
+</form>
+<form >
+<select #selectpueblo name="pueblo" id="pueblo" [(ngModel)]="pueblo1[0]">
+  <option *ngFor="let pueblo of pueblo1" [(ngValue)]="pueblo.id" >
+    {{pueblo.name}}
 
-</select>
-<select name="municipios">
-  <option value="-">-</option>
+  </option>
 </select>
 </form>
+<br>
+{{estadoselect.value|json}}
+<br>
+{{selectpueblo.value|json}}
+
+<form >
+<section>
+  <input type="number" name="calle" id="calle" placeholder="Calle">
+  <br>
+  <input type="number" name="externo" id="externo" placeholder="Numero Externo">
+  <br>
+  <input type="number" name="interno" id="interno" placeholder="Numero Interno">
+  <br>
+  <input type="number" name="colonia" id="colonia" placeholder="Colonia">
+  <br>
+  <input type="number" name="cp" id="cp" placeholder="Codigo Postal">
+</section>
 <input type="email" name="email" placeholder="Email">
 <input type="password" name="password" placeholder="password">
 <input type="password" name="confirmarpassword" placeholder="Confirmar password">
@@ -125,6 +135,7 @@
 <input type="submit" value="Registrarse">
 
 </form>
+
 </div>
 
 
