@@ -20,24 +20,25 @@
   </div>
 </div>
 </form>
-<form #estadoform="ngForm">
+<form #estadoform="ngForm" >
 <input type="number" name="celular" placeholder="Celular">
 <input type="text" name="Pais" placeholder="Mexico" value="Mexico" disabled="true">
 <div class="form-group">
   <label style="font-family: 'Quicksand', sans-serif;" >
     Estado
   </label>
-  <select #estadoselect name="estados" id="estados" [(ngModel)]="estados[0]" (click)="cambio(estadoselect.value)" >
-    <option *ngFor="let estado of estados" [ngValue]="estado.id" >
+  <select #estadoselect name="estados" id="estados" [(ngModel)]="estados[0]"(click)="cambio(estadoselect.value)"  >
+    <option *ngFor="let estado of estados" [ngValue]="estado.id">
       {{estado.name}}
     </option>
   </select>
 </div>
 </form>
 <form >
-<select #selectpueblo name="pueblo" id="pueblo" [(ngModel)]="pueblo1[0]">
-  <option *ngFor="let pueblo of pueblo1" [(ngValue)]="pueblo.id" >
-    {{pueblo.name}}
+<select #selectcuidad name="cuidad" id="cuidad" [(ngModel)]="cuidades[0]">
+
+  <option  *ngFor="let cuidad of cuidades" [(ngValue)]="cuidad.id" >
+    {{cuidad.name}}
 
   </option>
 </select>
@@ -45,7 +46,7 @@
 <br>
 {{estadoselect.value|json}}
 <br>
-{{selectpueblo.value|json}}
+{{selectcuidad.value|json}}
 
 <form >
 <section>

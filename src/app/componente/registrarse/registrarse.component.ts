@@ -16,12 +16,15 @@ import { PueblosModel } from 'src/app/models/pueblos.model';
 })
 export class RegistrarseComponent implements OnInit {
   @Input() value: number;
- public pueblos:PueblosModel[];
+  public cuidades: PueblosModel[] = [
+    { id: 0, name: 'seleccione pueblo' }
+  ];
+  @Input ()id: number=0;
 
 
 
   estados: EstadosModel[] = [
-    {id:0,name:'Seleccione un estado'},
+    { id: 0, name: 'Seleccione un estado' },
     { id: 21, name: 'Aguas Calientes' },
     { id: 4, name: 'Baja California Norte' },
     { id: 5, name: 'Baja California Sur' },
@@ -56,33 +59,28 @@ export class RegistrarseComponent implements OnInit {
     { id: 32, name: 'Zacatecas' }
 
   ];
-  pueblo1: PueblosModel[] = [
-    {id:0,name:"Seleccione Estado"},
-    { id: 1, name: 'Aguascalientes' },
-    { id: 2, name: 'Asientos' },
-    { id: 3, name: 'Calvillo' },
-    { id: 4, name: 'Cosío' },
-    { id: 5, name: '	Jesús María' },
-    { id: 6, name: 'Pabellón de Arteaga' },
-    { id: 7, name: '	Rincón de Romos' },
-    { id: 8, name: '	San José de Gracia' },
-    { id: 9, name: 'Tepezalá' },
-    { id: 10, name: 'El Llano' },
-    { id: 11, name: 'San Francisco de los Romo' }
-  ];
 
 
-  constructor(private estado: EstadosServicio) { }
+
+
+
+
+
+
+
+  constructor(private estado: EstadosServicio) {
+  }
+
 
   ngOnInit(): void {
   }
 
+  cambio(id) {
+    console.log(id);
 
 
+
+  }
 
 
 }
-
-
-
-
