@@ -2,6 +2,11 @@ import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { EstadosServicio } from 'src/app/servicios/estados.service';
 import { EstadosModel } from 'src/app/models/estados.models';
 import { PueblosModel } from 'src/app/models/pueblos.model';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { MesesModel } from 'src/app/models/mes.models';
+import { FechaModel } from 'src/app/models/fecha.model';
+import { YearModel } from 'src/app/models/year.model';
+import { SexoModel } from 'src/app/models/sexo.model';
 
 
 
@@ -16,10 +21,24 @@ import { PueblosModel } from 'src/app/models/pueblos.model';
 })
 export class RegistrarseComponent implements OnInit {
   @Input() value: number;
+  nombre:string;
+  apellidopaterno:string;
+  apellidomaterno:string;
   public cuidades: PueblosModel[] = [
     { id: 0, name: 'seleccione pueblo' }
   ];
-  @Input ()id: number=0;
+  @Input() id: number = 0;
+  valor: any;
+  valor1: any;
+  colonia: string;
+  anio:YearModel[]=[
+    {year:0}
+  ];
+  sexos:SexoModel[]=[
+    {sexo:'Selecciona'},
+    {sexo:'Masculino'},
+    {sexo:'Femenino'}
+  ];
 
 
 
@@ -60,6 +79,57 @@ export class RegistrarseComponent implements OnInit {
 
   ];
 
+  mes: MesesModel[] = [
+    { id: 0, name: 'Selecciona mes' },
+    { id: 1, name: 'Enero' },
+    { id: 2, name: 'Febrero' },
+    { id: 3, name: 'Marzo' },
+    { id: 4, name: 'Abril' },
+    { id: 5, name: 'Mayo' },
+    { id: 6, name: 'Junio' },
+    { id: 7, name: 'Julio' },
+    { id: 8, name: 'Agosto' },
+    { id: 9, name: 'Septiembre' },
+    { id: 10, name: 'Octubre' },
+    { id: 11, name: 'Noviembre' },
+    { id: 12, name: 'Diciembre' }
+  ];
+
+  dias: FechaModel[] = [
+    { dia: 0 },
+    { dia: 1 },
+    { dia: 2 },
+    { dia: 3 },
+    { dia: 4 },
+    { dia: 5 },
+    { dia: 6 },
+    { dia: 7 },
+    { dia: 8 },
+    { dia: 9 },
+    { dia: 10 },
+    { dia: 11 },
+    { dia: 12 },
+    { dia: 13 },
+    { dia: 14 },
+    { dia: 15 },
+    { dia: 16 },
+    { dia: 17 },
+    { dia: 18 },
+    { dia: 19 },
+    { dia: 20 },
+    { dia: 21 },
+    { dia: 22 },
+    { dia: 23 },
+    { dia: 24 },
+    { dia: 25 },
+    { dia: 26 },
+    { dia: 27 },
+    { dia: 28 },
+    { dia: 29 },
+    { dia: 30 },
+    { dia: 31 }
+  ];
+
 
 
 
@@ -75,9 +145,24 @@ export class RegistrarseComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  cambio(id) {
-    console.log(id);
+  cambio(id: number) {
+    this.valor = id[0] + id[1];
 
+    console.log(id);
+    console.log(this.valor);
+
+    this.cuidades = this.estado.seleccionarmunicipio(this.valor);
+    console.log("La cuidad es " + this.cuidades);
+    return this.cuidades;
+
+
+
+
+  }
+
+  year(){
+
+    return this.anio=this.estado.seleccionyear();
 
 
   }

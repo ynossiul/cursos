@@ -3,22 +3,26 @@
 <div class="wrap">
 <form>
 <h2>Singup Free</h2>
-<input type="text" name="nombre" placeholder="Nombre">
-<input type="text" name="apellidop" placeholder="Primer Apellido">
-<input type="text" name="apellidom" placeholder="Segundo Apellido">
-<div class="form-group">
-  <label >Sexo</label>
-  <div class="form-control">
-    <label class="radio-inline">
-      <input  type="radio" value="male"  name="sexo" >
-      Hombre
-    </label>
-    <label class="radio-inline">
-      <input type="radio"  value="female" name="sexo">
-      Mujer
-    </label>
-  </div>
+<input  #nombreinput type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nombre" [value]="nombre" >
+<input #apellidoinput  type="text" name="apellidop" placeholder="Primer Apellido" [(ngModel)]="apellidopaterno"[value]="apellidopaterno" >
+<input type="text" name="apellidom" placeholder="Segundo Apellido" [(ngModel)]="apellidomaterno" >
+<div >
+  <form action="">
+    <label >Sexo</label>
+
+    <select  #sexoselect  name="sexo" id="sexo" [(ngModel)]="sexos[0]">
+    <option *ngFor="let sexo of sexos" [(ngValue)]='sexo.sexo' >
+      {{sexo.sexo}}
+    </option>
+  </select>
+
+  <br>
+{{sexoselect.value|json}}
+{{nombreinput.value|json}}
+{{apellidoinput.value|json}}
+  </form>
 </div>
+
 </form>
 <form #estadoform="ngForm" >
 <input type="number" name="celular" placeholder="Celular">
@@ -28,7 +32,7 @@
     Estado
   </label>
   <select #estadoselect name="estados" id="estados" [(ngModel)]="estados[0]"(click)="cambio(estadoselect.value)"  >
-    <option *ngFor="let estado of estados" [ngValue]="estado.id">
+    <option *ngFor="let estado of estados" [(ngValue)]="estado.id">
       {{estado.name}}
     </option>
   </select>
@@ -42,11 +46,15 @@
 
   </option>
 </select>
+<input type="text" placeholder="Colonia" #coloniainput name="colonia" id="colonia" [(ngModel)]="colonia" >
+
 </form>
 <br>
 {{estadoselect.value|json}}
 <br>
 {{selectcuidad.value|json}}
+<br>
+{{coloniainput.value|json}}
 
 <form >
 <section>
@@ -56,7 +64,6 @@
   <br>
   <input type="number" name="interno" id="interno" placeholder="Numero Interno">
   <br>
-  <input type="number" name="colonia" id="colonia" placeholder="Colonia">
   <br>
   <input type="number" name="cp" id="cp" placeholder="Codigo Postal">
 </section>
@@ -65,68 +72,34 @@
 <input type="password" name="confirmarpassword" placeholder="Confirmar password">
 <span>Fecha de Nacimiento</span>
 <br>
-<select name="DoBmonth">
-<option> Month</option>
-<option value="enero">Enero</option>
-<option value="febrero">Febrero</option>
-<option value="marzo">Marzo</option>
-<option value="abril">Abril</option>
-<option value="mayo">Mayo</option>
-<option value="junio">Junio</option>
-<option value="julio">Julio</option>
-<option value="agosto">Agosto</option>
-<option value="septiembre">Septiembre</option>
-<option value="octubre">Octubre</option>
-<option value="noviembre">Nombiembre</option>
-<option value="diciembre">Diciembre</option>
-</select>
+<form action="" #fechaform>
+  <select name="mes" id="mes" #messelect [(ngModel)]="mes[0]">
+    <option *ngFor="let meses of mes" [(ngValue)]="meses.id">
+      {{meses.name}}
+    </option>
+    </select>
 
-<select name="DoBday">
-<option> Day</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
-<option value="31">31</option>
-</select>
+    <select name="dia" id="dia" #diaselect [(ngModel)]="dias[0]" (click)="year()">
+    <option *ngFor="let dia of dias" [(ngValue)]="dia.dia" >
+      {{dia.dia}}
+    </option>
 
-<select name="DoByear">
-<option> Year</option>
-<option value="2019">2019</option>
-<option value="2018">2018</option>
-<option value="2017">2017</option>
-<option value="2016">2016</option>
-<option value="2015">2015</option>
-<option value="2014">2014</option>
-<option value="2013">2013</option>
-<option value="2012">2012</option>
-</select>
+    </select>
+
+    <select name="year" id="year" #yearselect [(ngModel)]="anio[0]">
+    <option *ngFor="let year of anio" [(ngValue)]="year.year"  >
+      {{year.year}}
+    </option>
+  </select>
+
+    <br>
+    {{messelect.value|json}}
+    <br>
+    {{diaselect.value|json}}
+    <br>
+    {{yearselect.value|json}}
+</form>
+
 <br>
 <br>
 <input type="checkbox"> Acepto terminos y condiciones

@@ -1,6 +1,7 @@
 import { Injectable, Optional } from '@angular/core';
 import { EstadosModel } from '../models/estados.models';
 import { PueblosModel } from '../models/pueblos.model';
+import { YearModel } from '../models/year.model';
 
 
 
@@ -11,6 +12,24 @@ export class EstadosServicio {
   constructor() {
     console.log('estoy aqui');
   }
+
+  year: YearModel[] = [
+    { year: 1940 },
+    {year:1941},
+      {year:1942},
+      {year:1943},
+      {year:1944},
+      {year:1945},
+      {year:1946},
+      {year:1947},
+      {year:1948},
+      {year:1949},
+      {year:1950},
+      {year:1951},
+      {year:1952},
+      {year:1953}
+
+  ];
 
   cuidad0: PueblosModel[] = [
     { id: 0, name: 'selecciona pueblo' }
@@ -307,6 +326,7 @@ export class EstadosServicio {
   ];
 
   cuidad1: PueblosModel[] = [     // cuidad de mexico
+    { id: 0, name: 'Seleccionar municipio' },
     { id: 222, name: 'Azcapotzalco' },
     { id: 223, name: ' Coyoacán' },
     { id: 224, name: 'Cuajimalpa de Morelos' },
@@ -2579,144 +2599,184 @@ export class EstadosServicio {
     { id: 2408, name: 'Santa María de la Paz' },
   ];
 
-  seleccionarmunicipio(id: number) {
-    console.log(id);
-    if (id === 1) {
-      this.cuidades = this.cuidad1;
+  seleccionarmunicipio(id: any) {
+    console.log("el id de cuidad es " + id);
 
-    }
-
-    if (id == 2) {
-      this.cuidades = this.cuidad2;
-
-    }
-
-    if (id == 3) {
-      this.cuidades = this.cuidad3;
-
-    }
-    if (id == 4) {
-      this.cuidades = this.cuidad4;
-
-    }
-    if (id == 5) {
-      this.cuidades = this.cuidad5;
-
-    }
-    if (id == 6) {
-      this.cuidades = this.cuidad6;
-
-    }
-    if (id == 7) {
-      this.cuidades = this.cuidad7;
-
-    }
-    if (id ==  8) {
-      this.cuidades = this.cuidad8;
-
-    }
-    if (id == 9) {
-      this.cuidades = this.cuidad9;
-
-    }
-    if (id == 10) {
-      this.cuidades = this.ciudad10;
-
-    }
-    if (id == 11) {
-      this.cuidades = this.cuidad11;
-
-    }
-    if (id == 12) {
-      this.cuidades = this.cuidad12;
-
-    }
-    if (id == 13) {
-      this.cuidades = this.cuidad13;
-
-    }
-    if (id == 14) {
-      this.cuidades = this.cuidad14;
-
-    }
-    if (id == 15) {
-      this.cuidades = this.cuidad15;
-
-    }
-
-    if (id == 16) {
-      this.cuidades = this.cuidad16;
-
-    }
-    if (id == 17) {
-      this.cuidades = this.cuidad17;
-
-    }
-    if (id == 18) {
-      this.cuidades = this.cuidad18;
-
-    }
-    if (id == 19) {
-      this.cuidades = this.cuidad19;
-
-    }
-    if (id == 20) {
-      this.cuidades = this.cuidad20;
-
-    }
-    if (id == 21) {
+    if (id === '1:') {
       this.cuidades = this.cuidad21;
-
+      console.log("El valor de la cuidad es " + this.cuidades);
     }
-    if (id == 22) {
+
+    if (id === '2:') {
+      this.cuidades = this.cuidad4;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '3:') {
+      this.cuidades = this.cuidad5;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '4:') {  //campeche
+      this.cuidades = this.cuidad6;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '5:') { //couhila
+      this.cuidades = this.cuidad7;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '6:') {  //colima
+      this.cuidades = this.cuidad8;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '7:') {  //chiapas
+      this.cuidades = this.cuidad9;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '8:') {  //chiuahua
+      this.cuidades = this.ciudad10;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+
+
+    if (id === '9:') { //cdmx
+      this.cuidades = this.cuidad1;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '10') {  //durango
+      this.cuidades = this.cuidad11;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '11') {   //guanajuato
+      this.cuidades = this.cuidad12;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '12') {   //guerrero
+      this.cuidades = this.cuidad13;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '13') {   // hidalgo
+      this.cuidades = this.cuidad14;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '14') {   //jalisco
+      this.cuidades = this.cuidad15;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '15') {  //mexico
+      this.cuidades = this.cuidad2;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '16') {  //michoacan
+      this.cuidades = this.cuidad16;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '17') {  //morelos
+      this.cuidades = this.cuidad17;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '18') {   //nayarit
+      this.cuidades = this.cuidad18;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '19') {   //nuevo leon
+      this.cuidades = this.cuidad19;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '20') {  //oaxaca
+      this.cuidades = this.cuidad20;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '21') {  //puebla
+      this.cuidades = this.cuidad3;
+      console.log("El valor de la cuidad es " + this.cuidades);
+    }
+
+    if (id === '22') {
       this.cuidades = this.cuidad22;
-
+      console.log("El valor de la cuidad es " + this.cuidades);
     }
-    if (id == 23) {
+
+    if (id === '23') {
       this.cuidades = this.cuidad23;
-
+      console.log("El valor de la cuidad es " + this.cuidades);
     }
-    if (id == 24) {
+
+    if (id === '24') {
       this.cuidades = this.cuidad24;
-
+      console.log("El valor de la cuidad es " + this.cuidades);
     }
-    if (id == 25) {
+
+    if (id === '25') { // sinaloa
       this.cuidades = this.cuidad25;
-
+      console.log("El valor de la cuidad es " + this.cuidades);
     }
-    if (id == 26) {
-      this.cuidades = this.cuidad26;
 
+    if (id === '26') {  //sonora
+      this.cuidades = this.cuidad21;
+      console.log("El valor de la cuidad es " + this.cuidades);
     }
-    if (id == 27) {
+
+    if (id === '27') {    // tabasco
       this.cuidades = this.cuidad27;
-
+      console.log("El valor de la cuidad es " + this.cuidades);
     }
-    if (id == 28) {
-      this.cuidades = this.cuidad28;
 
+    if (id === '28') {  //tamaulipas
+      this.cuidades = this.cuidad21;
+      console.log("El valor de la cuidad es " + this.cuidades);
     }
-    if (id == 29) {
+
+    if (id === '29') {
       this.cuidades = this.cuidad29;
-
+      console.log("El valor de la cuidad es " + this.cuidades);
     }
-    if (id == 30) {
+
+    if (id === '30') {  //veracruz
       this.cuidades = this.cuidad30;
-
+      console.log("El valor de la cuidad es " + this.cuidades);
     }
-    if (id === 31 && id[31] ) {
+
+
+    if (id === '31') {  //yucatan
       this.cuidades = this.cuidad31;
-
+      console.log("El valor de la cuidad es " + this.cuidades);
     }
-    if (id == 32) {
+
+    if (id === '32') { //zacatecas
       this.cuidades = this.cuidad32;
-
+      console.log("El valor de la cuidad es " + this.cuidades);
     }
 
+    else {
+      console.log("no entro");
+    }
     return this.cuidades;
 
-  }
 
+
+
+  }
+  seleccionyear(){
+    return this.year;
+  }
 
 
 }
