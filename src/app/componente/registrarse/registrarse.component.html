@@ -1,117 +1,111 @@
 <body>
 
-<div class="wrap">
-<form>
-<h2>Singup Free</h2>
-<input  #nombreinput type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nombre" [value]="nombre" >
-<input #apellidoinput  type="text" name="apellidop" placeholder="Primer Apellido" [(ngModel)]="apellidopaterno"[value]="apellidopaterno" >
-<input type="text" name="apellidom" placeholder="Segundo Apellido" [(ngModel)]="apellidomaterno" >
-<div >
-  <form action="">
-    <label >Sexo</label>
+  <div class="wrap">
+    <form>
+      <h1>Crea tu cuenta</h1>
+      <h3>Datos Personales:</h3>
+      <input #nombreinput type="text" name="nombre" placeholder="Nombre" class="nombre" [(ngModel)]="nombre"
+        [value]="nombre">
+      <input #apellidoinput type="text" name="apellidop" placeholder="Primer Apellido" class="apellido" [(ngModel)]="apellidopaterno"
+        [value]="apellidopaterno">
+      <input #maternoinput type="text" name="apellidom" placeholder="Segundo Apellido" class="apellido" [(ngModel)]="apellidomaterno"
+        [value]="apellidomaterno">
+        <input #celularinput type="number" name="celular" placeholder="Celular" [value]="celular" class="telefono">
+      <div>
+        <form action="">
+          <label>Sexo</label>
 
-    <select  #sexoselect  name="sexo" id="sexo" [(ngModel)]="sexos[0]">
-    <option *ngFor="let sexo of sexos" [(ngValue)]='sexo.sexo' >
-      {{sexo.sexo}}
-    </option>
-  </select>
+          <select #sexoselect name="sexo" id="sexo" [(ngModel)]="sexos[0]">
+            <option *ngFor="let sexo of sexos" [(ngValue)]='sexo.sexo'>
+              {{sexo.sexo}}
+            </option>
+          </select>
 
-  <br>
-{{sexoselect.value|json}}
-{{nombreinput.value|json}}
-{{apellidoinput.value|json}}
-  </form>
-</div>
+          <br>
 
-</form>
-<form #estadoform="ngForm" >
-<input type="number" name="celular" placeholder="Celular">
-<input type="text" name="Pais" placeholder="Mexico" value="Mexico" disabled="true">
-<div class="form-group">
-  <label style="font-family: 'Quicksand', sans-serif;" >
-    Estado
-  </label>
-  <select #estadoselect name="estados" id="estados" [(ngModel)]="estados[0]"(click)="cambio(estadoselect.value)"  >
-    <option *ngFor="let estado of estados" [(ngValue)]="estado.id">
-      {{estado.name}}
-    </option>
-  </select>
-</div>
-</form>
-<form >
-<select #selectcuidad name="cuidad" id="cuidad" [(ngModel)]="cuidades[0]">
+        </form>
+      </div>
 
-  <option  *ngFor="let cuidad of cuidades" [(ngValue)]="cuidad.id" >
-    {{cuidad.name}}
+    </form>
+    <form #estadoform="ngForm">
 
-  </option>
-</select>
-<input type="text" placeholder="Colonia" #coloniainput name="colonia" id="colonia" [(ngModel)]="colonia" >
+      <input type="text" name="Pais" placeholder="Mexico" value="Mexico" disabled="true">
+      <div class="form-group">
+        <label style="font-family: 'Quicksand', sans-serif;">
+          Estado
+        </label>
+        <select #estadoselect name="estados" id="estados" [(ngModel)]="estados[0]" (click)="cambio(estadoselect.value)">
+          <option *ngFor="let estado of estados" [(ngValue)]="estado.id">
+            {{estado.name}}
+          </option>
+        </select>
+        <label > Municipio</label>
+      <select #selectcuidad name="cuidad" id="cuidad" [(ngModel)]="cuidades[0]">
 
-</form>
-<br>
-{{estadoselect.value|json}}
-<br>
-{{selectcuidad.value|json}}
-<br>
-{{coloniainput.value|json}}
+        <option *ngFor="let cuidad of cuidades" [(ngValue)]="cuidad.id">
+          {{cuidad.name}}
 
-<form >
-<section>
-  <input type="number" name="calle" id="calle" placeholder="Calle">
-  <br>
-  <input type="number" name="externo" id="externo" placeholder="Numero Externo">
-  <br>
-  <input type="number" name="interno" id="interno" placeholder="Numero Interno">
-  <br>
-  <br>
-  <input type="number" name="cp" id="cp" placeholder="Codigo Postal">
-</section>
-<input type="email" name="email" placeholder="Email">
-<input type="password" name="password" placeholder="password">
-<input type="password" name="confirmarpassword" placeholder="Confirmar password">
-<span>Fecha de Nacimiento</span>
-<br>
-<form action="" #fechaform>
-  <select name="mes" id="mes" #messelect [(ngModel)]="mes[0]">
-    <option *ngFor="let meses of mes" [(ngValue)]="meses.id">
-      {{meses.name}}
-    </option>
-    </select>
+        </option>
+      </select>
+      </div>
+    </form>
+    <form>
 
-    <select name="dia" id="dia" #diaselect [(ngModel)]="dias[0]" (click)="year()">
-    <option *ngFor="let dia of dias" [(ngValue)]="dia.dia" >
-      {{dia.dia}}
-    </option>
+      <input type="text" placeholder="Colonia" #coloniainput name="colonia" id="colonia" [(ngModel)]="colonia">
+      <input #calleinput type="number" name="calle" id="calle" placeholder="Calle" [value]="calle">
 
-    </select>
+      <input #externoinput type="number" name="externo" id="externo" placeholder="Numero Externo" [value]="externo">
 
-    <select name="year" id="year" #yearselect [(ngModel)]="anio[0]">
-    <option *ngFor="let year of anio" [(ngValue)]="year.year"  >
-      {{year.year}}
-    </option>
-  </select>
+      <input #internoinput type="number" name="interno" id="interno" placeholder="Numero Interno" [value]="interno">
 
-    <br>
-    {{messelect.value|json}}
-    <br>
-    {{diaselect.value|json}}
-    <br>
-    {{yearselect.value|json}}
-</form>
+      <input #codigoinput type="number" name="cp" id="cp" placeholder="Codigo Postal" [value]="codigop">
 
-<br>
-<br>
-<input type="checkbox"> Acepto terminos y condiciones
-<br>
-<input type="checkbox"> Soy mayor de edad
-<br>
-<input type="submit" value="Registrarse">
+      <input #emailinput type="email" name="email" placeholder="Email">
+      <input #passwordinput type="password" name="password" placeholder="password">
+      <input #confirmarinput type="password" name="confirmarpassword" placeholder="Confirmar password">
+      <br>
+      <span>Fecha de Nacimiento</span>
+      <br>
+      <form action="" #fechaform>
+        <select name="mes" id="mes" #messelect [(ngModel)]="mes[0]">
+          <option *ngFor="let meses of mes" [(ngValue)]="meses.id">
+            {{meses.name}}
+          </option>
+        </select>
 
-</form>
+        <select name="dia" id="dia" #diaselect [(ngModel)]="dias[0]" (click)="year()">
+          <option *ngFor="let dia of dias" [(ngValue)]="dia.dia">
+            {{dia.dia}}
+          </option>
 
-</div>
+        </select>
+
+        <select name="year" id="year" #yearselect [(ngModel)]="anio[0]">
+          <option *ngFor="let year of anio" [(ngValue)]="year.year">
+            {{year.year}}
+          </option>
+        </select>
+
+    </form>
+
+
+      <br>
+      <br>
+      <input *ngIf="check" type="checkbox"> Acepto terminos y condiciones
+      <br>
+      <input type="checkbox"> Soy mayor de edad
+      <br>
+      <input type="submit" value="Registrarse">
+
+    </form>
+
+  </div>
+
+  <div class="container mt-5 mb-5" style="width: 400px;">
+  <h3>Date Picker</h3>
+  <input type="text" id=elegir class="form-control">
+  </div>
+
 
 
 </body>
-

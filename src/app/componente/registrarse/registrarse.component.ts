@@ -24,6 +24,13 @@ export class RegistrarseComponent implements OnInit {
   nombre:string;
   apellidopaterno:string;
   apellidomaterno:string;
+  calle:number;
+  externo:number;
+  interno:number;
+  codigop:number;
+  check:false;
+  celular:number;
+
   public cuidades: PueblosModel[] = [
     { id: 0, name: 'seleccione pueblo' }
   ];

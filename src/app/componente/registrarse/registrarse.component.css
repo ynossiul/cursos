@@ -8,14 +8,17 @@ font-family: 'Quicksand', sans-serif;
 body{
 margin-top:5rem;
 
+
 }
 
 .wrap{
 width: 350px;
 margin: auto;
-background:#e1211e;
+background:white;
 margin-top: 50px;
 padding: 5px;
+width: 70%;
+height: 60%;
 }
 
 form{
@@ -23,12 +26,13 @@ padding: 10px;
 border: 1px dotted white;
 }
 
-h2{
+h1{
 text-align: center;
-background: #78140a;
-color: white;
+color: #af1615;
 padding: 10px;
 border-radius: 10px;
+font-family: 'Quicksand', sans-serif;
+font-size: 30pt;
 }
 
 input{
@@ -38,9 +42,7 @@ border-radius: 5px;
 border: none;
 }
 
-input[type=text], input[type=email], input[type=password], input[type=number]{
-width: 90%;
-}
+
 
 input[type=checkbox]{
 font-family: 'Quicksand', sans-serif;
@@ -48,4 +50,35 @@ font-family: 'Quicksand', sans-serif;
 
 option{
   font-family: 'Quicksand', sans-serif;
+}
+
+.nombre{
+  width: 100%;
+  background: transparent;
+border: 0;
+outline: 0;
+border-bottom: 5px solid #e1e0e0;
+}
+
+.apellido{
+  width:40%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  border-bottom: 5px solid #e1e0e0;
+}
+
+h3{
+  text-align: left;
+  color: #e1211e;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 2rem;
+}
+
+.telefono{
+  background: transparent;
+  border: 0;
+  outline: 0;
+  border-bottom: 5px solid #e1e0e0;
+  width: 40%;
 }
